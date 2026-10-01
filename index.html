@@ -5,40 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ลงทะเบียนกิจกรรม Open House สาขา 313</title>
     <style>
-        body { font-family: 'Sarabun', sans-serif; background-color: #f4f4f9; padding: 20px; }
-        .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h2 { color: #333; text-align: center; }
-        .description { font-size: 0.9em; color: #555; margin-bottom: 20px; line-height: 1.6; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
-        .help-text { font-size: 0.8em; color: #777; margin-bottom: 5px; display: block; }
-        input[type="text"], input[type="tel"], select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        input[type="radio"], input[type="checkbox"] { margin-right: 10px; }
-        .radio-group, .checkbox-group { margin-bottom: 10px; }
-        button { width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
-        button:hover { background-color: #218838; }
-        .section-title { background-color: #e9ecef; padding: 10px; margin: 20px -30px 20px -30px; border-left: 5px solid #28a745; }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            /* Flexbox สำหรับจัดหน้าให้อยู่กลางจอ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            /* Flexbox สำหรับกล่องหลัก */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: center;
+        }
+        .header h2 {
+            margin: 0;
+            color: #333;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+        .description {
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.6;
+            text-align: left;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #28a745;
+        }
+        form {
+            /* Flexbox สำหรับฟอร์ม */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .section-title {
+            background-color: #e9ecef;
+            padding: 10px 15px;
+            border-left: 5px solid #28a745;
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        .form-group {
+            /* Flexbox สำหรับกลุ่มข้อมูลแต่ละช่อง */
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+        .help-text {
+            font-size: 0.8em;
+            color: #777;
+        }
+        input[type="text"], input[type="tel"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+        .options-group {
+            /* Flexbox สำหรับจัดกลุ่ม Radio / Checkbox */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 4px;
+        }
+        .option-item {
+            /* Flexbox สำหรับจัดวางตัวเลือกพร้อมกล่องติ๊ก */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-weight: normal;
+        }
+        .option-item input[type="radio"],
+        .option-item input[type="checkbox"] {
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            margin: 0;
+        }
+        button {
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            /* Flexbox สำหรับปุ่มกด */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>ลงทะเบียนเข้าร่วมกิจกรรม Open House “สมาธิเพื่อการพัฒนาตนเองตลอดชีวิต” | สถาบันพลังจิตตานุภาพ สาขา 313</h2>
-    <div class="description">
-        ขอเรียนเชิญทุกท่านร่วมกิจกรรม Open House เยี่ยมชมการเรียนการสอน "หลักสูตรครูสมาธิ" ตามหลักปฏิบัติของ สมเด็จพระญาณวชิโรดม (หลวงพ่อวิริยังค์ สิรินฺธโร)<br><br>
-        <strong>วัน-เวลา:</strong> ภาคเสาร์ - อาทิตย์ เวลา 09.00 - 16.30 น.<br>
-        <strong>สถานที่:</strong> สถาบันพลังจิตตานุภาพ สาขา 313 วัชรญาณ วัดพระราม ๙ กาญจนาภิเษก<br>
-        <strong>สอบถามเพิ่มเติม/สำรองที่นั่ง:</strong> โทร. 081-472-1247<br><br>
-        (กรุณากรอกข้อมูลด้านล่างเพื่อสำรองที่นั่งเข้าร่วมกิจกรรม)
+    <div class="header">
+        <h2>ลงทะเบียนเข้าร่วมกิจกรรม Open House “สมาธิเพื่อการพัฒนาตนเองตลอดชีวิต” | สถาบันพลังจิตตานุภาพ สาขา 313</h2>
+        <div class="description">
+            ขอเรียนเชิญทุกท่านร่วมกิจกรรม Open House เยี่ยมชมการเรียนการสอน "หลักสูตรครูสมาธิ" ตามหลักปฏิบัติของ สมเด็จพระญาณวชิโรดม (หลวงพ่อวิริยังค์ สิรินฺธโร)<br><br>
+            <strong>วัน-เวลา:</strong> ภาคเสาร์ - อาทิตย์ เวลา 09.00 - 16.30 น.<br>
+            <strong>สถานที่:</strong> สถาบันพลังจิตตานุภาพ สาขา 313 วัชรญาณ วัดพระราม ๙ กาญจนาภิเษก<br>
+            <strong>สอบถามเพิ่มเติม/สำรองที่นั่ง:</strong> โทร. 081-472-1247<br><br>
+            (กรุณากรอกข้อมูลด้านล่างเพื่อสำรองที่นั่งเข้าร่วมกิจกรรม)
+        </div>
     </div>
 
     <form id="openHouseForm">
         <!-- ส่วนที่ 1 -->
-        <h3 class="section-title" style="padding-left: 30px;">ส่วนที่ 1: ข้อมูลพื้นฐานสำหรับลงทะเบียน</h3>
+        <div class="section-title">ส่วนที่ 1: ข้อมูลพื้นฐานสำหรับลงทะเบียน</div>
         
         <div class="form-group">
-            <label>คำนำหน้านาม *</label>
-            <select name="prefix" required>
+            <label for="prefix">คำนำหน้านาม *</label>
+            <select id="prefix" name="prefix" required>
                 <option value="">เลือกคำนำหน้า</option>
                 <option value="นาย">นาย</option>
                 <option value="นาง">นาง</option>
@@ -48,26 +163,26 @@
         </div>
 
         <div class="form-group">
-            <label>ชื่อ - นามสกุล *</label>
+            <label for="name">ชื่อ - นามสกุล *</label>
             <span class="help-text">กรุณาระบุชื่อและนามสกุลจริง</span>
-            <input type="text" name="name" required>
+            <input type="text" id="name" name="name" required>
         </div>
 
         <div class="form-group">
-            <label>เบอร์โทรศัพท์ที่ติดต่อได้ *</label>
+            <label for="phone">เบอร์โทรศัพท์ที่ติดต่อได้ *</label>
             <span class="help-text">กรุณากรอกเป็นตัวเลขเท่านั้น</span>
-            <input type="tel" name="phone" pattern="[0-9]*" required>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]*" required>
         </div>
 
         <div class="form-group">
-            <label>Line ID / อีเมล</label>
+            <label for="contactLink">Line ID / อีเมล</label>
             <span class="help-text">สำหรับรับแจ้งเตือนและข้อมูลการเดินทาง</span>
-            <input type="text" name="contactLink">
+            <input type="text" id="contactLink" name="contactLink">
         </div>
 
         <div class="form-group">
-            <label>ช่วงอายุ *</label>
-            <select name="age" required>
+            <label for="age">ช่วงอายุ *</label>
+            <select id="age" name="age" required>
                 <option value="">เลือกช่วงอายุ</option>
                 <option value="ต่ำกว่า 20 ปี">ต่ำกว่า 20 ปี</option>
                 <option value="20 - 35 ปี">20 - 35 ปี</option>
@@ -78,50 +193,58 @@
         </div>
 
         <!-- ส่วนที่ 2 -->
-        <h3 class="section-title" style="padding-left: 30px;">ส่วนที่ 2: การสำรองที่นั่งและวางแผนจัดงาน</h3>
+        <div class="section-title">ส่วนที่ 2: การสำรองที่นั่งและวางแผนจัดงาน</div>
 
         <div class="form-group">
             <label>จำนวนผู้เข้าร่วมกิจกรรม *</label>
-            <div class="radio-group"><input type="radio" name="guestCount" value="เข้าร่วม 1 ท่าน" required> เข้าร่วม 1 ท่าน</div>
-            <div class="radio-group"><input type="radio" name="guestCount" value="เข้าร่วมเป็นกลุ่ม 2 ท่านขึ้นไป"> เข้าร่วมเป็นกลุ่ม 2 ท่านขึ้นไป (ระบุจำนวนในข้อถัดไป)</div>
+            <div class="options-group">
+                <label class="option-item"><input type="radio" name="guestCount" value="เข้าร่วม 1 ท่าน" required> เข้าร่วม 1 ท่าน</label>
+                <label class="option-item"><input type="radio" name="guestCount" value="เข้าร่วมเป็นกลุ่ม 2 ท่านขึ้นไป"> เข้าร่วมเป็นกลุ่ม 2 ท่านขึ้นไป (ระบุจำนวนในข้อถัดไป)</label>
+            </div>
         </div>
 
         <div class="form-group">
-            <label>หากมาเป็นกลุ่ม กรุณาระบุจำนวนผู้ติดตามและชื่อผู้ติดตาม</label>
-            <textarea name="groupDetails" rows="3"></textarea>
+            <label for="groupDetails">หากมาเป็นกลุ่ม กรุณาระบุจำนวนผู้ติดตามและชื่อผู้ติดตาม</label>
+            <textarea id="groupDetails" name="groupDetails" rows="3"></textarea>
         </div>
 
         <div class="form-group">
             <label>ยานพาหนะที่ใช้ในการเดินทาง *</label>
-            <div class="radio-group"><input type="radio" name="vehicle" value="รถยนต์ส่วนบุคคล (ต้องการที่จอดรถ)" required> รถยนต์ส่วนบุคคล (ต้องการที่จอดรถ)</div>
-            <div class="radio-group"><input type="radio" name="vehicle" value="รถจักรยานยนต์"> รถจักรยานยนต์</div>
-            <div class="radio-group"><input type="radio" name="vehicle" value="รถสาธารณะ / แท็กซี่"> รถสาธารณะ / แท็กซี่</div>
+            <div class="options-group">
+                <label class="option-item"><input type="radio" name="vehicle" value="รถยนต์ส่วนบุคคล (ต้องการที่จอดรถ)" required> รถยนต์ส่วนบุคคล (ต้องการที่จอดรถ)</label>
+                <label class="option-item"><input type="radio" name="vehicle" value="รถจักรยานยนต์"> รถจักรยานยนต์</label>
+                <label class="option-item"><input type="radio" name="vehicle" value="รถสาธารณะ / แท็กซี่"> รถสาธารณะ / แท็กซี่</label>
+            </div>
         </div>
 
         <!-- ส่วนที่ 3 -->
-        <h3 class="section-title" style="padding-left: 30px;">ส่วนที่ 3: ข้อมูลเชิงบริหารเพื่อการประชาสัมพันธ์</h3>
+        <div class="section-title">ส่วนที่ 3: ข้อมูลเชิงบริหารเพื่อการประชาสัมพันธ์</div>
 
         <div class="form-group">
             <label>ท่านเคยมีพื้นฐานการปฏิบัติสมาธิมาก่อนหรือไม่ *</label>
-            <div class="radio-group"><input type="radio" name="background" value="ไม่เคยมีพื้นฐาน" required> ไม่เคยมีพื้นฐาน</div>
-            <div class="radio-group"><input type="radio" name="background" value="เคยฝึกสมาธิจากสถาบัน/สำนักอื่น"> เคยฝึกสมาธิจากสถาบัน/สำนักอื่น</div>
-            <div class="radio-group"><input type="radio" name="background" value="เคยปฏิบัติสมาธิสายหลวงพ่อวิริยังค์ สิรินฺธโร"> เคยปฏิบัติสมาธิสายหลวงพ่อวิริยังค์ สิรินฺธโร</div>
-            <div class="radio-group"><input type="radio" name="background" value="เคยเรียนหลักสูตรอื่นของสถาบันพลังจิตตานุภาพ"> เคยเรียนหลักสูตรอื่นของสถาบันพลังจิตตานุภาพ</div>
+            <div class="options-group">
+                <label class="option-item"><input type="radio" name="background" value="ไม่เคยมีพื้นฐาน" required> ไม่เคยมีพื้นฐาน</label>
+                <label class="option-item"><input type="radio" name="background" value="เคยฝึกสมาธิจากสถาบัน/สำนักอื่น"> เคยฝึกสมาธิจากสถาบัน/สำนักอื่น</label>
+                <label class="option-item"><input type="radio" name="background" value="เคยปฏิบัติสมาธิสายหลวงพ่อวิริยังค์ สิรินฺธโร"> เคยปฏิบัติสมาธิสายหลวงพ่อวิริยังค์ สิรินฺธโร</label>
+                <label class="option-item"><input type="radio" name="background" value="เคยเรียนหลักสูตรอื่นของสถาบันพลังจิตตานุภาพ"> เคยเรียนหลักสูตรอื่นของสถาบันพลังจิตตานุภาพ</label>
+            </div>
         </div>
 
         <div class="form-group">
             <label>ท่านรับทราบข่าวสารกิจกรรม Open House จากช่องทางใด *</label>
-            <div class="checkbox-group"><input type="checkbox" name="marketingSource" value="ป้ายประชาสัมพันธ์หน้าวัด/สถาบัน"> ป้ายประชาสัมพันธ์หน้าวัด/สถาบัน</div>
-            <div class="checkbox-group"><input type="checkbox" name="marketingSource" value="Facebook / Social Media"> Facebook / Social Media</div>
-            <div class="checkbox-group"><input type="checkbox" name="marketingSource" value="Line Official / กลุ่ม Line"> Line Official / กลุ่ม Line</div>
-            <div class="checkbox-group"><input type="checkbox" name="marketingSource" value="มีผู้แนะนำ (คนรู้จัก/ศิษย์เก่า)"> มีผู้แนะนำ (คนรู้จัก/ศิษย์เก่า)</div>
-            <div class="checkbox-group"><input type="checkbox" name="marketingSource" value="อื่นๆ (โปรดระบุ)"> อื่นๆ (โปรดระบุ)</div>
+            <div class="options-group">
+                <label class="option-item"><input type="checkbox" name="marketingSource" value="ป้ายประชาสัมพันธ์หน้าวัด/สถาบัน"> ป้ายประชาสัมพันธ์หน้าวัด/สถาบัน</label>
+                <label class="option-item"><input type="checkbox" name="marketingSource" value="Facebook / Social Media"> Facebook / Social Media</label>
+                <label class="option-item"><input type="checkbox" name="marketingSource" value="Line Official / กลุ่ม Line"> Line Official / กลุ่ม Line</label>
+                <label class="option-item"><input type="checkbox" name="marketingSource" value="มีผู้แนะนำ (คนรู้จัก/ศิษย์เก่า)"> มีผู้แนะนำ (คนรู้จัก/ศิษย์เก่า)</label>
+                <label class="option-item"><input type="checkbox" name="marketingSource" value="อื่นๆ (โปรดระบุ)"> อื่นๆ (โปรดระบุ)</label>
+            </div>
         </div>
 
         <div class="form-group">
-            <label>ข้อสอบถามเพิ่มเติม หรือความต้องการพิเศษ</label>
+            <label for="specialRequest">ข้อสอบถามเพิ่มเติม หรือความต้องการพิเศษ</label>
             <span class="help-text">เช่น ข้อจำกัดด้านการเคลื่อนไหว การแพ้อาหาร หรือคำถามเกี่ยวกับหลักสูตร</span>
-            <textarea name="specialRequest" rows="3"></textarea>
+            <textarea id="specialRequest" name="specialRequest" rows="3"></textarea>
         </div>
 
         <button type="submit">ส่งข้อมูลลงทะเบียน</button>
@@ -132,15 +255,13 @@
     document.getElementById("openHouseForm").addEventListener("submit", function(e){
         e.preventDefault();
         
-        // รวบรวมข้อมูล Checkbox ที่เลือกหลายข้อให้เป็นข้อความเดียว
         let selectedSources = [];
         document.querySelectorAll('input[name="marketingSource"]:checked').forEach(function(cb) {
             selectedSources.push(cb.value);
         });
 
-        // นำ URL ที่ได้จากการ Deploy Web App มาใส่ที่นี่
-        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzkj0ncwnSIYpuckcwq4bW0uJRotND7lbXmvNK4VPCvDQxPaFthAmJkjmuKgBzqzavF/exec'; //ลงทะเบียนOpenHouse-HTML
-  
+        // นำ URL ที่ได้จาก Google Apps Script Web App มาวางที่นี่
+        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzkj0ncwnSIYpuckcwq4bW0uJRotND7lbXmvNK4VPCvDQxPaFthAmJkjmuKgBzqzavF/exec'; 
 
         let formData = new FormData(this);
         formData.set('marketingSource', selectedSources.join(', '));
